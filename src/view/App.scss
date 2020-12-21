@@ -1,0 +1,28 @@
+.todo-app {
+  width: 500px;
+  margin: 0 auto;
+  .title {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 20px;
+  }
+
+  .todo-input {
+    display: flex;
+    height: 40px;
+    
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.03);  
+    input {
+      margin: 0 10px;
+      flex: auto;
+      border: none;
+      outline: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    button {
+      flex: none;
+    }
+  }
+}
