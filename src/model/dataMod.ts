@@ -1,11 +1,11 @@
 export type DataModel = {
-  todoList: TodoList
-}
+  todoList: TodoList,
+};
 
-export type TodoList = Todo[]
+export type TodoList = Todo[];
 
 export type Todo = {
   id: number,
   value: string,
-  completed: boolean
-}
+  completed: boolean,
+};

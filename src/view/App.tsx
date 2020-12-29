@@ -6,7 +6,7 @@ import TodoListComponent from './TodoListComponent';
 export default class App extends React.Component {
   render() {
     return (
-      <div className='todo-app'>
+      <div className="todo-app">
         <div className="title">Todo</div>
         <InputComponent />
         <TodoListComponent />

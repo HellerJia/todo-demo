@@ -25,7 +25,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "tslint": "tslint src/**/*.ts{,x}",
+    "tslint:fix": "tslint --fix src/**/*.ts{,x}"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +48,8 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.12"
+    "@types/react-redux": "^7.1.12",
+    "tslint": "^5.18.0",
+    "tslint-config-airbnb": "^5.11.1"
   }
 }

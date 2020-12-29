@@ -1,11 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import { ADD } from "../model/action";
+import React from 'react';
+import { connect } from 'react-redux';
+import { ADD } from '../model/action';
 
 class InputComponent extends React.Component<{
-  addTodo: (value: string) => any
+  addTodo: (value: string) => any,
 }, {
-  curValue: string
+  curValue: string,
 }> {
 
   constructor(props: any) {
@@ -15,7 +15,7 @@ class InputComponent extends React.Component<{
 
   render() {
     return (
-      <div className='todo-input'>
+      <div className="todo-input">
         <input type="text" value={this.state.curValue} onChange={this.inputChange}/>
         <button onClick={this.addItem}>Add</button>
       </div>
@@ -23,26 +23,26 @@ class InputComponent extends React.Component<{
   }
 
   private inputChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState( { curValue: ev.target.value } );
+    this.setState({ curValue: ev.target.value });
   }
 
   private addItem = () => {
     if (this.state.curValue.length > 0) {
       this.props.addTodo(this.state.curValue);
     }
-    this.setState( { curValue: '' } );
+    this.setState({ curValue: '' });
   }
 
   static mapDispatchToProps = (dispatch: any) => ({
     addTodo: (value: string) => dispatch({
       type: ADD,
-      value: value,
-      completed: false
-    })
+      value,
+      completed: false,
+    }),
   })
 }
 
 export default connect(
   null,
-  InputComponent.mapDispatchToProps
-)(InputComponent)
+  InputComponent.mapDispatchToProps,
+)(InputComponent);

@@ -1,22 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { TodoList, Todo, DataModel } from "../model/dataMod";
-import TodoItem from "./TodoItem";
+import React from 'react';
+import { connect } from 'react-redux';
+import { TodoList, Todo, DataModel } from '../model/dataMod';
+import TodoItem from './TodoItem';
 
 class ListComponent extends React.Component< {dataList: TodoList}, { filter: (todo: Todo) => boolean } > {
   constructor(props: any) {
     super(props);
     this.state = {
-      filter: () => true
+      filter: () => true,
     };
   }
 
   render() {
-    const items = this.props.dataList.filter(this.state.filter).map( data => (
+    const items = this.props.dataList.filter(this.state.filter).map(data => (
       <li>
         <TodoItem todo={data}/>
       </li>
-    ) );
+    ));
 
     return (
       <div>
@@ -30,25 +30,25 @@ class ListComponent extends React.Component< {dataList: TodoList}, { filter: (to
 
   private chooseDone = () => {
     this.setState({
-      filter: (todo) => todo.completed
+      filter: (todo: Todo) => todo.completed,
     });
   }
 
   private chooseTodo = () => {
     this.setState({
-      filter: (todo) => !todo.completed
+      filter: (todo: Todo) => !todo.completed,
     });
   }
 
   private clearFilter = () => {
     this.setState({
-      filter: () => true
+      filter: () => true,
     });
   }
 
-  static mapStateToProps = (state: DataModel) => ({dataList: state.todoList})
+  static mapStateToProps = (state: DataModel) => ({ dataList: state.todoList });
 }
 
 export default connect(
-  ListComponent.mapStateToProps
+  ListComponent.mapStateToProps,
 )(ListComponent);
